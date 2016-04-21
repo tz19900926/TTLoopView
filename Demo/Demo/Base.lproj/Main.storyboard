@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jC3-z4-Bwu" customClass="TTLoopView">
+                                <rect key="frame" x="0.0" y="178.5" width="320" height="210"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jC3-z4-Bwu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="53w-TQ-BeN"/>
+                            <constraint firstAttribute="trailing" secondItem="jC3-z4-Bwu" secondAttribute="trailing" id="GWF-hY-BWz"/>
+                            <constraint firstItem="jC3-z4-Bwu" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.369" id="c69-VL-utP"/>
+                            <constraint firstItem="jC3-z4-Bwu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="e1g-JQ-LWL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lpView" destination="jC3-z4-Bwu" id="vfi-ep-kGS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="129.59999999999999" y="208.74000000000001"/>
+        </scene>
+    </scenes>
+</document>
