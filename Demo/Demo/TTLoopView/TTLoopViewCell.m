@@ -50,8 +50,6 @@ static NSMutableDictionary *cacheImageDict;
     {// 不可以
         UIImage *image = cacheImageDict[URLString];
         if (image == nil) {
-            // 占位图
-            self.iconView.image = self.placeHolderImage;
             // 下载图片
             [self downloadImage:[NSURL URLWithString:URLString] cacheKey:URLString];
         }else
@@ -63,6 +61,7 @@ static NSMutableDictionary *cacheImageDict;
 // 下载并缓存到本地
 - (void)downloadImage:(NSURL *)URL cacheKey:(NSString *)key
 {
+    self.iconView.image = self.placeHolderImage;
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         // 读取url中的内容
         NSData *data = [NSData dataWithContentsOfURL:URL];
@@ -70,13 +69,15 @@ static NSMutableDictionary *cacheImageDict;
             NSLog(@"图片下载失败");
             return ;
         };
-        
+
         UIImage *image = [UIImage imageWithData:data];
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            // 缓存到本地磁盘
+            // 缓存
             cacheImageDict[key] = image;
-
+            // 更新UI
+            self.iconView.image = image;
+            // 写入磁盘
             [NSKeyedArchiver archiveRootObject:cacheImageDict toFile:cachePath];
         });
     });
