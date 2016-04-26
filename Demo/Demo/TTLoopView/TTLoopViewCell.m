@@ -49,7 +49,6 @@ static NSMutableDictionary *cacheImageDict;
     }else
     {// 不可以
         UIImage *image = cacheImageDict[URLString];
-        
         if (image == nil) {
             // 占位图
             self.iconView.image = self.placeHolderImage;
@@ -67,9 +66,13 @@ static NSMutableDictionary *cacheImageDict;
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         // 读取url中的内容
         NSData *data = [NSData dataWithContentsOfURL:URL];
-        if (data == nil) return ;
+        if (data == nil) {
+            NSLog(@"图片下载失败");
+            return ;
+        };
+        
         UIImage *image = [UIImage imageWithData:data];
-
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             // 缓存到本地磁盘
             cacheImageDict[key] = image;

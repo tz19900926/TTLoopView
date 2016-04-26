@@ -24,7 +24,7 @@
     [super viewDidLoad];
     
     // storyBoard创建
-    self.lpView.images = self.images;
+    self.lpView.URLs = @[];
     
 //    // 代码创建
 //    TTLoopView *lpView = [TTLoopView LoopViewWithImages:self.images titles:self.titles didSelected:^(NSInteger itemIndex) {

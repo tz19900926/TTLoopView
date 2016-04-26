@@ -35,13 +35,13 @@ typedef NS_ENUM(NSInteger, TitlePosition){
 @property (nonatomic,strong) UIImage *placeHolderImage;
 
 /** 图片URL数组 */
-@property (nonatomic,strong) NSArray *URLs;
+@property (nonatomic,strong) NSArray<NSString *> *URLs;
 
-/** 图片数组 */
-@property (nonatomic,strong) NSArray *images;
+/** 本地图片数组 */
+@property (nonatomic,strong) NSArray<UIImage *> *images;
 
 /** 标题数组 */
-@property (nonatomic, strong) NSArray *titles;
+@property (nonatomic, strong) NSArray<NSString *> *titles;
 
 /** 时间间隔 */
 @property (nonatomic,assign) NSInteger timerInterval;

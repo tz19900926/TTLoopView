@@ -215,10 +215,11 @@
 {
     TTLoopViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     
+    // 本地图片
     if (self.images) {
         cell.image = self.images[indexPath.item % self.imageCount];
     }else
-    {
+    {// 网络请求图片
         if (self.placeHolderImage) {
             cell.placeHolderImage = self.placeHolderImage;
         }
