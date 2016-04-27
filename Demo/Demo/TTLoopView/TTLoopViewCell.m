@@ -1,5 +1,4 @@
 
-
 #import "TTLoopViewCell.h"
 #define cachePath [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"cacheImageDict.data"]
 
@@ -14,7 +13,6 @@ static NSMutableDictionary *cacheImageDict;
 + (void)initialize
 {
     if (cacheImageDict == nil) {
-        
         cacheImageDict = [NSKeyedUnarchiver unarchiveObjectWithFile:cachePath];
         if (cacheImageDict == nil) {
             cacheImageDict = [NSMutableDictionary dictionary];
@@ -24,7 +22,6 @@ static NSMutableDictionary *cacheImageDict;
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        
         self.iconView = [[UIImageView alloc] init];
         [self addSubview:self.iconView];
     }
@@ -55,6 +52,7 @@ static NSMutableDictionary *cacheImageDict;
         }else
         {
             self.iconView.image = image;
+            self.placeHolderImage = nil;
         }
     }
 }
@@ -69,7 +67,6 @@ static NSMutableDictionary *cacheImageDict;
             NSLog(@"图片下载失败");
             return ;
         };
-
         UIImage *image = [UIImage imageWithData:data];
         
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -82,6 +79,7 @@ static NSMutableDictionary *cacheImageDict;
         });
     });
 }
+
 
 - (void)layoutSubviews {
     [super layoutSubviews];

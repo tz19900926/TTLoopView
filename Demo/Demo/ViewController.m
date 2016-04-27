@@ -24,9 +24,9 @@
     [super viewDidLoad];
     
     // storyBoard创建
-    self.lpView.URLs = @[@"http://www.52ij.com/uploads/allimg/160317/1110104P8-4.jpg",@"http://banbao.chazidian.com/uploadfile/2016-01-25/s145368924044608.jpg",@"http://pic32.nipic.com/20130829/12906030_124355855000_2.png"];
+    self.lpView.URLs = @[@"http://a.hiphotos.baidu.com/image/h%3D200/sign=f0666d0b4634970a5873172fa5cbd1c0/ac4bd11373f08202021a341b4cfbfbedab641b0d.jpg",@"http://i-2.yxdown.com/2014/12/31/d3330fb9-0593-42bf-ad1c-e2654c601d95.jpg",@"http://n.7k7kimg.cn/2013/0415/1365996063946.jpg"];
     self.lpView.placeHolderImage = self.images[0];
-//    NSLog(@"%@",self.lpView.placeHolderImage);
+
 //    // 代码创建
 //    TTLoopView *lpView = [TTLoopView LoopViewWithImages:self.images titles:self.titles didSelected:^(NSInteger itemIndex) {
 //        NSLog(@"%zd",itemIndex);
